@@ -32,6 +32,11 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Not found router
+app.use('/', function (req, res, next) {
+  console.log('Backend is working!');
+});
+
 // Mount the router
 app.use('/api/products', upload.array('image'), productsRouter);
 app.use('/api/auth', authRouter);
