@@ -19,10 +19,8 @@ const { checkCurrentUser } = require('./middleware/checkCurrentUser'); // Import
 // Cors
 var corsOptions = {
   origin: [
-    `${process.env.REACT_APP_USER_URL}`,
     `${process.env.REACT_APP_ADMIN_URL}`,
-    'http://localhost:3000',
-    'http://localhost:3006',
+    `${process.env.REACT_APP_USER_URL}`
   ],
   optionsSuccessStatus: 200 // For legacy browser support
 };
@@ -31,11 +29,6 @@ app.use(cors(corsOptions));
 // Body parser
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Not found router
-app.use('/', function (req, res, next) {
-  console.log('Backend is working!');
-});
 
 // Mount the router
 app.use('/api/products', upload.array('image'), productsRouter);
@@ -52,7 +45,7 @@ app.use('/api/revenue', revenueRoutes);
 app.use(checkCurrentUser);
 
 // Not found router
-//app.use('*', function (req, res, next) {
+// app.use('*', function (req, res, next) {
 //   console.log('not found');
 // });
 
