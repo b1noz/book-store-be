@@ -52,7 +52,7 @@ app.use('/api/revenue', revenueRoutes);
 app.use(checkCurrentUser);
 
 // Not found router
-app.use('*', function (req, res, next) {
+//app.use('*', function (req, res, next) {
 //   console.log('not found');
 // });
 
