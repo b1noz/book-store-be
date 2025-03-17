@@ -18,7 +18,7 @@ exports.banking= (req, res, next)=> {
     let tmnCode = "MSR07BZ1";
     let secretKey ="CTEWJNFLYXGAINUFNKOMJQESGDOLSXXF";
     let vnpUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-    let returnUrl = `${process.env.REACT_APP_USER_URL}/Checkout;
+    let returnUrl = `${process.env.REACT_APP_USER_URL}/Checkout`;
     let orderId = moment(date).format('DDHHmmss');
     let amount = req.body.total;
     let bankCode ='';
