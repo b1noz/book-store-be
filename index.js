@@ -53,8 +53,8 @@ app.use(checkCurrentUser);
 
 // Not found router
 app.use('*', function (req, res, next) {
-  console.log('not found');
-});
+//   console.log('not found');
+// });
 
 // MongoDB connection
 dbSingleton.connect().then(() => {
